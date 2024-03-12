@@ -1,0 +1,19 @@
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #0056b3; /* Button color on hover */
+}
+
+a + a {
+  margin-left: 10px; /* Adjust spacing between buttons */
+}

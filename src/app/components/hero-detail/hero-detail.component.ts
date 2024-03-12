@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../../services/hero.service';
 import { Location } from '@angular/common';
-import { Hero } from '../hero';
+import { Hero } from '../../hero';
 
 @Component({
   selector: 'app-hero-detail',
@@ -29,6 +29,15 @@ export class HeroDetailComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+  }
+
+  
+
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 
   goBack() {
